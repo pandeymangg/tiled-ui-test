@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+.leaf {
+  /* width: 50%;
+  height: 100%; */
+  word-break: break-all;
+  border: 1px solid #eee;
+  padding: 4px;
+}
+
+.split-width {
+  width: 50%;
+  height: 100%;
+}
+
+.split-height {
+  height: 50%;
+  width: 100%;
+}
+
+.root {
+  /* width: 50%;
+  height: 100%; */
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.close:hover {
+  cursor: pointer;
+}
