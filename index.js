@@ -1,25 +1,8 @@
-import { dataSourceTen as datasource } from "./data.js";
+import { dataSourceSix as datasource } from "./data.js";
 
 function traverse(rootData, rootElement, width, height) {
   try {
-    console.log("props: ", { rootData, rootElement, width, height });
-    const rootWidth =
-      +rootElement.style.width.replace("px", "") || rootElement.clientWidth;
-    const rootHeight =
-      +rootElement.style.height.replace("px", "") || rootElement.clientHeight;
-
-    console.log("rootHeight: ", rootHeight);
-    console.log("rootWidth: ", rootWidth);
-
-    console.log("height: ", height);
-    console.log("width: ", width);
-
-    const rootRatio = rootWidth / rootHeight;
     const ratio = width / height;
-
-    console.log({ rootRatio, ratio });
-
-    const splitClass = ratio > 1 ? "split-width" : "split-height";
     const elementFlexClass = ratio > 1 ? "flex-row" : "flex-col";
 
     if (rootData.type === "child") {
@@ -71,6 +54,5 @@ Array.from(leaves).forEach((leaf) => {
   const leafWidth = leaf.clientWidth;
   const bgOpacity = 1 - leafWidth / bodyWidth;
   leaf.style.backgroundColor = `rgba(51,51,51, ${bgOpacity})`;
-
-  leaf.innerHTML = `${leaf.innerHTML} width=${leaf.clientWidth}`;
+  leaf.innerHTML = `${leaf.innerHTML} ${leaf.clientWidth} x ${leaf.clientHeight}`;
 });
