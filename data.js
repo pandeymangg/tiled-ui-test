@@ -127,7 +127,6 @@ export const dataSourceTen = {
 
 export const dataSourceThree = {
   type: "root",
-  noSplit: true,
   leaves: [
     {
       type: "child",
